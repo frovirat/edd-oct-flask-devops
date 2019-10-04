@@ -61,10 +61,11 @@ pipeline {
             }
             steps {
                 echo 'Linting...'
+                sh 'pip install -r requirements.txt'
                 sh 'pylint -f parseable --rcfile=.pylintrc $PACKAGE_NAME | tee pylint.out'
                 recordIssues(
-                    enableForFailure: true,
-                    ignoreFailedBuild: false,
+                    enabledForFailure: true,
+                    ignoreFailedBuilds: false,
                     tools: [ pyLint(pattern: 'pylint.out') ],
                     qualityGates : [
                         [threshold: 16, type: 'TOTAL_LOW', unstable: true],
@@ -76,6 +77,7 @@ pipeline {
             }
         }
         stage('Test') {
+            a
             steps {
                 echo 'Testing...'
             }
