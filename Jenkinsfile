@@ -17,8 +17,8 @@ pipeline {
     agent any
     environment {
         DEPLOY_URL = ''
-        GROUP_NAME = 'group0'
-        GROUP_PORT = '5000'
+        GROUP_NAME = 'group5'
+        GROUP_PORT = '5005'
         PROJECT_NAME = 'edd-oct-flask-devops'
         PACKAGE_NAME = 'apis'
         LOCAL_BRANCH_NAME = ''
