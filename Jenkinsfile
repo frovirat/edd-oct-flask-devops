@@ -88,7 +88,8 @@ pipeline {
                 sh 'py.test --cov -v --junitxml=unittests.xml --cov=$PACKAGE_NAME --cov=.coveragerc --cov-report=xml:coverage.xml'
                 cobertura(
                     autoUpdateHealth: true,
-                    onlyStable: false
+                    onlyStable: false,
+                    coberturaReportFile: 'coverage.xml'
                 )
             }
         }
