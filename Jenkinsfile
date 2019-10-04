@@ -70,7 +70,7 @@ pipeline {
                         [threshold: 16, type: 'TOTAL_LOW', unstable: true],
                         [threshold: 11, type: 'TOTAL_NORMAL', unstable: true],
                         [threshold: 1, type: 'TOTAL_HIGH', unstable: true],
-                        [threshold: 1, type: 'TOTAL_ERROR', unstable: true]
+                        [threshold: 1, type: 'TOTAL_ERROR', unstable: true],
                     ]
                 )
             }
