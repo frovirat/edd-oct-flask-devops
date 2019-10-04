@@ -59,6 +59,7 @@ pipeline {
                     image 'pylint:latest'
                 }
             }
+            
             steps {
                 echo 'Linting...'
                 sh 'pip install -r requirements.txt'
