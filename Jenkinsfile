@@ -77,8 +77,14 @@ pipeline {
             }
         }
         stage('Test') {
+            agent {
+                docker {
+                    image 'pytest-cov:latest'
+                }
+            }
             steps {
                 echo 'Testing...'
+                sh 'py.test --cov -v --junitxml=unittests.xml --cov=$PACKAGE_NAME --cov=.coveragerc --cov-report=xml:coverage.xml'
             }
         }
         stage('Build') {
